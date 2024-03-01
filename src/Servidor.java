@@ -1,3 +1,5 @@
+package src;
+
 import java.rmi.AlreadyBoundException;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
@@ -38,7 +40,7 @@ public class Servidor implements Interfaz{
             };
         }, 0);
         Registry registry = LocateRegistry.createRegistry(PUERTO);
-       	System.out.println("Servidor escuchando en el puerto " + String.valueOf(PUERTO));
+       	System.out.println("src.Servidor escuchando en el puerto " + String.valueOf(PUERTO));
         registry.bind("Calculadora", remote); // Registrar calculadora
     }
 
