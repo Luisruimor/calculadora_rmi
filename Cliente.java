@@ -12,8 +12,8 @@ public class Cliente {
         Interfaz interfaz = (Interfaz) registry.lookup("Calculadora"); //Buscar en el registro...
         Scanner sc = new Scanner(System.in);
         int eleccion;
-        float numero1, numero2, numero3 = 0, resultado = 0;
-        String menu = "\n\n------------------\n\n[-1] => Salir\n[0] => Sumar\n[1] => Restar\n[2] => Multiplicar\n[3] => Dividir\nElige: ";
+        float numero1, numero2 = 0, numero3 = 0, resultado = 0;
+        String menu = "\n\n------------------\n\n[-1] => Salir\n[0] => Sumar\n[1] => Restar\n[2] => Multiplicar\n[3] => Dividir\n[4] => Raiz Cuadrada\nElige: ";
         do {
             System.out.println(menu);
 
@@ -24,27 +24,36 @@ public class Cliente {
             }
 
             if(eleccion != -1){
-
-            	System.out.println("Ingresa el número 1: ");
-            	try{
-                	numero1 = Float.parseFloat(sc.nextLine());
-            	}catch(NumberFormatException e){
-            		numero1 = 0;
-            	}
-
-            	System.out.println("Ingresa el número 2: ");
-            	try{
-                	numero2 = Float.parseFloat(sc.nextLine());
-            	}catch(NumberFormatException e){
-            		numero2 = 0;
-            	}
-
-				if (eleccion==0 || eleccion==2){
-					System.out.println("Ingresa el número 3: ");
+				if (eleccion==4){
+					System.out.println("Ingresa el número a hacer la raíz cuadrada");
+					try {
+						numero1=Float.parseFloat(sc.nextLine());
+					}catch (NumberFormatException e){
+						numero1=0;
+					}
+				}
+				else {
+					System.out.println("Ingresa el número 1: ");
 					try{
-						numero3 = Float.parseFloat(sc.nextLine());
+						numero1 = Float.parseFloat(sc.nextLine());
 					}catch(NumberFormatException e){
-						numero3 = 0;
+						numero1 = 0;
+					}
+
+					System.out.println("Ingresa el número 2: ");
+					try{
+						numero2 = Float.parseFloat(sc.nextLine());
+					}catch(NumberFormatException e){
+						numero2 = 0;
+					}
+
+					if (eleccion==0 || eleccion==2){
+						System.out.println("Ingresa el número 3: ");
+						try{
+							numero3 = Float.parseFloat(sc.nextLine());
+						}catch(NumberFormatException e){
+							numero3 = 0;
+						}
 					}
 				}
 
@@ -61,6 +70,9 @@ public class Cliente {
 	                case 3:
 	                    resultado = interfaz.dividir(numero1, numero2);
 	                    break;
+					case 4:
+						resultado = interfaz.raiz(numero1);
+						break;
 	            }
 
                 System.out.println("Resultado => " + String.valueOf(resultado));

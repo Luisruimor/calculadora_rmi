@@ -31,6 +31,11 @@ public class Servidor implements Interfaz{
             public float dividir(float numero1, float numero2) throws RemoteException {
                 return numero1 / numero2;
             };
+
+            @Override
+            public float raiz(float numero1) throws RemoteException {
+                return (float) Math.sqrt(numero1);
+            };
         }, 0);
         Registry registry = LocateRegistry.createRegistry(PUERTO);
        	System.out.println("Servidor escuchando en el puerto " + String.valueOf(PUERTO));
@@ -56,4 +61,10 @@ public class Servidor implements Interfaz{
     public float dividir(float numero1, float numero2) throws RemoteException {
         return 0;
     }
+
+    @Override
+    public float raiz (float numero1) throws RemoteException {
+        return 0;
+    }
+
 }
