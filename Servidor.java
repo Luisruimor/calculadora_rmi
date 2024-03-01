@@ -34,7 +34,7 @@ public class Servidor implements Interfaz{
         }, 0);
         Registry registry = LocateRegistry.createRegistry(PUERTO);
        	System.out.println("Servidor escuchando en el puerto " + String.valueOf(PUERTO));
-        registry.bind("Calc", remote); // Registrar calculadora
+        registry.bind("Calculadora", remote); // Registrar calculadora
     }
 
     @Override
