@@ -36,4 +36,24 @@ public class Servidor implements Interfaz{
        	System.out.println("Servidor escuchando en el puerto " + String.valueOf(PUERTO));
         registry.bind("Calc", remote); // Registrar calculadora
     }
+
+    @Override
+    public float sumar(float numero1, float numero2) throws RemoteException {
+        return 0;
+    }
+
+    @Override
+    public float restar(float numero1, float numero2) throws RemoteException {
+        return 0;
+    }
+
+    @Override
+    public float multiplicar(float numero1, float numero2) throws RemoteException {
+        return 0;
+    }
+
+    @Override
+    public float dividir(float numero1, float numero2) throws RemoteException {
+        return 0;
+    }
 }
