@@ -1,7 +1,7 @@
 package test;
 
 import org.junit.Test;
-import src.Interfaz;
+import Interfaz;
 
 
 import java.rmi.RemoteException;
